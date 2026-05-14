@@ -1,17 +1,17 @@
-/* full page */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f7fc;
 }
 
-/* wrapper */
+
 .dashboard {
   min-height: 100vh;
   padding: 20px;
 }
 
-/* header */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -24,13 +24,13 @@ body {
   margin-bottom: 30px;
 }
 
-/* title */
+
 .logo {
   font-size: 28px;
   font-weight: bold;
 }
 
-/* add button */
+
 .add-btn {
   padding: 12px 20px;
   border: none;
@@ -47,7 +47,7 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,.2);
 }
 
-/* sections */
+
 .add-note-section,
 .notes-section {
   background: white;
@@ -57,14 +57,14 @@ body {
   margin-bottom: 25px;
 }
 
-/* notes title */
+
 .notes-section h2 {
   margin-top: 0;
   margin-bottom: 20px;
   color: #333;
 }
 
-/* mobile */
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
