@@ -1,0 +1,39 @@
+<div class="notes-wrapper">
+
+  <div class="page-title">
+    
+  </div>
+
+  <div class="notes-container" *ngIf="Notes.length > 0; else noNotes">
+
+    <div class="note-card" *ngFor="let note of Notes">
+      
+      <div class="note-header">
+        <span class="note-icon"> <i class="ti ti-file-text"></i></span>
+        <h3>{{ note.title }}</h3>
+      </div>
+
+      <p>{{ note.content }}</p>
+
+      <div class="btn-group">
+        <button class="edit-btn" (click)="onEditNotes(note)">
+          <i class="ti ti-edit"></i> Edit
+        </button>
+
+        <button class="delete-btn" (click)="deleteNote(note.id)">
+          🗑 Delete
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <ng-template #noNotes>
+    <div class="empty-state">
+      <h3>No Notes Found</h3>
+      <p>Create your first note to get started.</p>
+    </div>
+  </ng-template>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="dashboard">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+     <h2> <i class="ti ti-file-text"></i> My Notes</h2>
+    </div>
+
+    <button class="add-btn" (click)="onAddNote()" >
+      + Add New Note
+    </button>
+  </header>
+
+
+  <!-- Add Note Section -->
+  <section class="" >
+    <app-add-notes [NoteInfo]="NoteData"></app-add-notes>
+  </section>
+
+
+  <!-- Notes List -->
+  <section class="notes-section">
+    <h2>Your Notes</h2>
+    <app-notes-list (EditNote)="onEditNote($event)"></app-notes-list>
+  </section>
+
+</div>
