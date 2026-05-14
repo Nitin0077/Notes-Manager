@@ -15,7 +15,7 @@ export interface Note{
 
 export class NotesServices {
 
- private apiUrl = 'http://localhost:3000';
+ private apiUrl = 'https://notes-manager-7qkl.onrender.com/';
 
  private http =inject(HttpClient);
 
