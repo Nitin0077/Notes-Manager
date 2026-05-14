@@ -1,63 +1,158 @@
-<<<<<<< HEAD
-# NotesManageProject
+# 📝 Notes Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+A full-stack CRUD web application for managing personal notes — built with Angular, Node.js, Express, and MySQL.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tech Stack
 
+| Layer      | Technology              |
+|------------|-------------------------|
+| Frontend   | Angular 21              |
+| Backend    | Node.js + Express.js    |
+| Database   | MySQL                   |
+| UI Icons   | Tabler Icons            |
+
+---
+
+## ✨ Features
+
+- ✅ View all notes in a responsive card layout
+- ✅ Create a new note via a modal form
+- ✅ Edit an existing note (reusable form component)
+- ✅ Delete a note
+- ✅ REST API with full CRUD support
+- ✅ Angular service for clean HTTP communication
+
+---
+
+## 📁 Project Structure
+
+```
+NotesManageProject/
+│
+├── backend/                  # Node.js + Express API
+│   ├── index.js              # All API routes + DB connection
+│   └── package.json
+│
+└── frontend/                 # Angular Application
+    └── src/app/
+        ├── dashboard/        # Main page — shows all UI
+        ├── add-notes/        # Reusable Create + Edit modal
+        └── notes-list/       # Displays all notes as cards
+```
+
+---
+
+## 🔌 API Endpoints
+
+Base URL: `http://localhost:3000`
+
+| Method   | Endpoint       | Description       |
+|----------|----------------|-------------------|
+| `POST`   | `/notes`       | Create a new note |
+| `GET`    | `/notes`       | Get all notes     |
+| `GET`    | `/notes/:id`   | Get one note      |
+| `PUT`    | `/notes/:id`   | Update a note     |
+| `DELETE` | `/notes/:id`   | Delete a note     |
+
+---
+
+## 🗄️ Database Setup
+
+Before running the project, set up MySQL manually:
+
+**Step 1 — Create the database**
+```sql
+CREATE DATABASE notesdb;
+USE notesdb;
+```
+
+**Step 2 — Create the notes table**
+```sql
+
+CREATE DATABASE notesdb;
+USE notesdb;
+
+CREATE TABLE notes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255),
+  content TEXT
+);
+
+```
+
+**Step 3 — Update DB credentials in `backend/index.js`**
+```javascript
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",       // your MySQL username
+  password: "root",   // your MySQL password
+  database: "notesdb"
+});
+```
+
+---
+
+## ⚙️ How to Run Locally
+
+### 1. Clone the repository
 ```bash
+git clone https://github.com/Nitin0077/Notes-Manager.git
+cd Notes-Manager
+```
+
+### 2. Start the Backend
+```bash
+cd backend
+npm install
+node index.js
+```
+Backend runs at → `http://localhost:3000`
+
+### 3. Start the Frontend
+```bash
+cd frontend
+npm install
 ng serve
 ```
+Frontend runs at → `http://localhost:4200`
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+> ⚠️ Make sure MySQL is running and the database is set up before starting the backend.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🧩 Angular Components
 
-```bash
-ng generate component component-name
+| Component       | Responsibility                                      |
+|-----------------|-----------------------------------------------------|
+| `Dashboard`     | Main layout — header, add button, notes section     |
+| `AddNotes`      | Reusable modal form for both Create and Edit        |
+| `NotesList`     | Fetches and displays all notes, emits edit event    |
+| `NoteService`   | Handles all HTTP calls to the backend API           |
+
+---
+
+## 📸 How It Works
+
+```
+User opens app (Angular)
+        ↓
+Dashboard loads → NotesList fetches GET /notes
+        ↓
+Notes displayed as cards
+        ↓
+Click "Add New Note" → AddNotes modal opens → POST /notes
+Click "Edit"        → AddNotes modal opens with data → PUT /notes/:id
+Click "Delete"      → DELETE /notes/:id
+        ↓
+UI updates automatically
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 👨‍💻 Author
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# Notes-Manager
->>>>>>> fcad8922f1187f3156accdd898552ef3671c16b6
+**Nitin Vishwakarma**
+- GitHub: [@Nitin0077](https://github.com/Nitin0077)
+- Email: vishwakarmanitin7263@gmail.com
